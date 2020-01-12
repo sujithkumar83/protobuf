@@ -42,13 +42,14 @@ message MyMessage{
 message MyMessage {
     int32 id=1;
     string first_name=2;
-}                                                      
+}
 ```
-*** Old code will not read the new field at all and it will be dropped
-*** New code reading old data will will not find the field and hence it will assume default value
-** Renaming fields
-
-`// v1.0 schema
+        + Old code will not read the new field at all and it will be dropped
+        + New code reading old data will will not find the field and hence it will assume default value
+    + Renaming fields
+    
+```
+// v1.0 schema
 
 message MyMessage {
     int32 id=1;
@@ -61,13 +62,14 @@ message MyMessage {
     int32 id=1;
     string person_first_name=2;
 }  
-                                             `
+```
 
-*** No changes!
+        + No changes!
 
-** Removing fields
+    + Removing fields
 
-`// v1.0 schema
+```
+// v1.0 schema
 
 message MyMessage {
     int32 id=1;
@@ -78,12 +80,12 @@ message MyMessage {
 
 message MyMessage{
     int32 id=1;
-}  
-                                             `
+}
 
-*** If old code doesn't find the field it assumes a default
-*** You need to reserve the tag and the name
-`// v1.0 schema
+        + If old code doesn't find the field it assumes a default
+        + You need to reserve the tag and the name
+```
+// v1.0 schema
 
 message MyMessage {
     int32 id=1;
@@ -97,20 +99,19 @@ message MyMessage{
 reserved 2;
 reserved "first_name";
     int32 id=1;
-}  
-                                             `
+}
+```
+    + Reserved Example
 
-** Reserved Example
-
-`
+```
 message MyMessage{
 
 reserved 2, 15, 12, 34, 45 to 56;
 reserved "first_name", "last_name";
     int32 id=1;
 }  
-                                             `
+````
 
-*** Do not ever remov the Reserved tags
+        + Do not ever remov the Reserved tags
 
 
