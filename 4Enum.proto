@@ -1,0 +1,24 @@
+syntax="proto3";
+//Person Class defines a User in th system
+message Person {
+    int32 age =1; // this is the age
+    string first_name=2; // this is the first name
+    string last_name=3;
+    bytes img=4;  // small jpg file
+    bool is_profil_verified=5;
+    float height =6; // person height in inches
+
+    // Example of a repated value. a list of phone numbers. This is optional. 
+    repeated string phone_numbers=7;
+
+    // Enumeration
+    enum EyeColour {
+        UnknownColor=0;
+        EyeGreen=1;
+        EyeBrown=2;
+        EyeBlue=3;
+    }
+
+    EyeColour eyecolor=8;
+
+}
