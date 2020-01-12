@@ -15,8 +15,6 @@ Protobuf playpen
 
 # Useful Other Resources 
 
-[Go Mind Map](https://github.com/sujithkumar83/Go/blob/master/LearningGo.pdf)
-
 * Uber has put together an amazing style guidelines [here] (https://github.com/uber/prototool/blob/dev/etc/style/uber1/uber1.proto)
 * [Documentation](https://developers.google.com/protocol-buffers/docs/proto3)
 * [Naming Conventions](https://developers.google.com/protocol-buffers/docs/reference/csharp/namespace/google/protobuf/well-known-types)
