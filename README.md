@@ -22,9 +22,9 @@ Protobuf playpen
 
 # Schema Changes- How to change schema w/o breaking the App
 
-* Schema Changes- Fields may be added, deleted, modified 
--- Forward compatibility- we want to read New data written by new .proto files to be read by old code written thru old .proto file
-** Backward compatibility- we want to read old data written by old .proto files to be read by new code written thru new .proto file
++ Schema Changes- Fields may be added, deleted, modified 
+    + Forward compatibility- we want to read New data written by new .proto files to be read by old code written thru old .proto file
+    + Backward compatibility- we want to read old data written by old .proto files to be read by new code written thru new .proto file
 * Rules for Schema Changes
 ** Don't change Numeric tags for any existing fields (for ex string name=1, don't chnage 1 ever)
 ** You can add new fields and old code will just ignore them
