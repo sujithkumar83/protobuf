@@ -25,15 +25,16 @@ Protobuf playpen
 + Schema Changes- Fields may be added, deleted, modified 
     + Forward compatibility- we want to read New data written by new .proto files to be read by old code written thru old .proto file
     + Backward compatibility- we want to read old data written by old .proto files to be read by new code written thru new .proto file
-* Rules for Schema Changes
-** Don't change Numeric tags for any existing fields (for ex string name=1, don't chnage 1 ever)
-** You can add new fields and old code will just ignore them
-** If old/ new code reads unknown data, the default will take place
-** Fields can be removed as long as tag number is not used again in updated message type. Better rename the field by adding OBSOLETE_ as a prefix or reserve the tag. 
-** For data type changes refer the documentation- ideally just add a new fields
-** Adding fields 
++ Rules for Schema Changes
+    + Don't change Numeric tags for any existing fields (for ex string name=1, don't chnage 1 ever)
+    + You can add new fields and old code will just ignore them
+    + If old/ new code reads unknown data, the default will take place
+    + Fields can be removed as long as tag number is not used again in updated message type. Better rename the field by adding OBSOLETE_ as a prefix or reserve the tag. 
+    + For data type changes refer the documentation- ideally just add a new fields
+    + Adding fields 
 
-`// v1.0 schema
+```
+// v1.0 schema
 message MyMessage{
     int32 id=1;
 } 
@@ -41,8 +42,8 @@ message MyMessage{
 message MyMessage {
     int32 id=1;
     string first_name=2;
-}                                               `
-
+}                                                      
+```
 *** Old code will not read the new field at all and it will be dropped
 *** New code reading old data will will not find the field and hence it will assume default value
 ** Renaming fields
