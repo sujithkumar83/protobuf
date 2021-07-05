@@ -7,5 +7,5 @@ message Person {
     bytes small_picture = 4;
     bool is_profile_verified = 5;
     float height = 6;
-    int32 = company_name=7;
+    int32 company_name=7;
 }
